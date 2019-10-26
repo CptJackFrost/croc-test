@@ -146,3 +146,7 @@ input {
 .buttons {
     margin: auto 20px 5px auto;
 }
+
+.site-content tr:nth-of-type(n+3) td{
+    width: 90px;
+}
