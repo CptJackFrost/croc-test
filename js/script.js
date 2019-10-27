@@ -7,37 +7,54 @@ window.addEventListener('DOMContentLoaded', ()=> {
     const inputs2 = document.querySelectorAll('.form2 input');
     const table2 = document.querySelectorAll('table')[2];
 
-    function addRow(table, inputs){
-        
+
+    function addRow(table, inputs, n){        
         
         let rowsAmount = table.querySelectorAll('tr').length;
-        let cellsAmount = table.querySelectorAll('tr:last-child td').length;
+        let lastRow = table.querySelectorAll('.total td');
         let newRow = table.insertRow(rowsAmount-1);
         let newCells = [];
 
+                
         if (rowsAmount < 34) {
-            let cursor = 0;
-            for (let i = 0; i < cellsAmount; i++){
-                newCells[i] = newRow.insertCell(-1);
-                if (i == 0){
-                    newCells[i].textContent = rowsAmount - 2;
-                    continue;
+            //сделаем пустую строку
+            const createRow = function(){
+                for (let i = 0; i < lastRow.length; i++){
+                    newCells[i] = newRow.insertCell(-1);
                 }
-                else if (i % 3 == 0){
-                    newCells[i].textContent = 
-                        (newCells[i-1].textContent / newCells[i-2].textContent) *100;
-                    continue;
+            };
+            createRow();
+
+            //заполниv новую строку данными из инпутов и рассчетами
+            let fillRow = ()=> {
+                let cursor = 0;
+
+                if (n === 1){
+
                 }
 
-                newCells[i].textContent = inputs[cursor].value;
-                cursor++;
-                console.log(i);
-                console.log(newCells[i].textContent);
-            }
+                //заполняем строку второй таблицы
+                if (n === 2) {
+                    for (let i = 0; i < lastRow.length; i++){
+                        
+                        //порядковый номер строки в первую ячейку
+                        if (i == 0){
+                            newCells[i].textContent = rowsAmount - 2;
+                            continue;
+                        }
 
-
-
-            //newCells[0].textContent = rowsAmount - 2;
+                        //в каждую третью - рассчет из того, что находится в двух предыдущих
+                        else if (i % 3 == 0){
+                            newCells[i].textContent = 
+                                    (newCells[i-1].textContent / newCells[i-2].textContent)*100;
+                            continue;
+                        }
+                        newCells[i].textContent = inputs[cursor].value;
+                        cursor++;
+                    }
+                }
+            };
+            fillRow(inputs);
         }
 
         else {
@@ -45,6 +62,25 @@ window.addEventListener('DOMContentLoaded', ()=> {
         }
         
     }
+
+    function calculateTotals(table){
+        const lastRow = table.querySelectorAll('.total td');
+        let value = 0;
+        
+        for (let i = 1; i < lastRow.length; i++){
+            for (let j = 2; j < table.rows.length-1; j++){
+                value += +(table.rows[j].cells[i].textContent);
+            }
+            lastRow[i].textContent = value;
+            value=0;
+        }
+    }
+
+    calculateTotals(table2);
+
+    document.querySelectorAll('button')[2].addEventListener('click', () =>{
+        calculateTotals(table2);
+    });
 
     function removeRow(table) {
         let rows = table.rows;
@@ -58,11 +94,13 @@ window.addEventListener('DOMContentLoaded', ()=> {
     }
 
     addButton.addEventListener('click', ()=> {
-        addRow(table2, inputs2);
+        addRow(table2, inputs2, 2);
+        calculateTotals(table2);
     });
 
     removeButton.addEventListener('click', ()=> {
         removeRow(table2);
+        calculateTotals(table2);        
     });
     
 });
