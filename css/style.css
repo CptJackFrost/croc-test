@@ -51,7 +51,7 @@ li.selected {
     padding-right: 12px;
 }
 
-.info tr td:last-child {
+.info tr td:last-child, .bold {
     font-weight: bold;
 }
 
@@ -103,13 +103,22 @@ h2 {
 }
 
 .mail {
-    font-size: 1.1em;
+    text-align: center;
+}
+
+.mail a {
+    background-image: url('../img/postme3.jpg');
+    background-size: 100%;
+    display: inline-block;
+    height: 60px;
+    width: 120px;
 }
 
 .site-content table {
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+
 }
 
 .site-content td {
@@ -121,15 +130,16 @@ h2 {
     font-weight: bold;
 }
 
-.form2 {
+.form2, .form1 {
     display: flex;
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     margin-top: 15px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-.form2 ul {
+.form2 ul, .form1 ul {
     text-align: right;
     list-style: none;
 }
@@ -145,8 +155,23 @@ input {
 
 .buttons {
     margin: auto 20px 5px auto;
+    display: flex;
 }
 
-.site-content tr:nth-of-type(n+3) td{
+button {
+    margin-left: 4px;
+}
+
+
+.site-content tr:nth-of-type(n+3) td {
     width: 90px;
+}
+
+
+.rotated span{
+    writing-mode: vertical-rl;
+    overflow-wrap: wrap;
+    transform: rotate(180deg);
+    margin: 2px 3px;
+    padding: 0;
 }

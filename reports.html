@@ -34,45 +34,174 @@
                 <li><a href="about_myself.html">О себе</a></li>            
             </ul>
     </header>
-    <div class="site-content">
+    <div class="site-content">        
         
+        <div class="form1">
+            <ul>
+                <li>
+                    <label>Состояло: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Поступило в приемный покой: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Поступило из других отделений: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Выписано в др.стационары: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Выписано в стационар ЧОДКБ: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Умерло: <input type="number"></label>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label>Состоит на ИВЛ опер-но: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Состоит на ИВЛ не опер-но: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Состоит без ИВЛ опер-но: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Состоит без ИВЛ не опер-но: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Состоит матерей: <input type="number"></label>
+                </li>
+                <li>
+                    <label>Коек на обработке: <input type="number"></label>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <label>Свободных коек: <input type="number"></label>
+                </li>
+                <li>
+                    <label>ИВЛ не рабочие: <input type="number"></label>
+                </li>
+                <li>
+                    <label>ИВЛ рабочие: <input type="number"></label>
+                </li>
+                <li>
+                    <label>ИВЛ занято: <input type="number"></label>
+                </li>
+                <li>
+                    <label>ИВЛ свободно: <input type="number"></label>
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+
+            
+            <ul class="buttons">
+                <li>
+                    <button>Добавить</button>
+                </li>
+                <li>
+                    <button>Удалить</button>
+                </li>
+            </ul>
+        </div>
+
+        <table class="first-table" border = "1">
+            <tr class="first-row">
+                <td class="period rotated" rowspan="3"><span>дата(период)</span></td>
+                <td rowspan="3" class="rotated bold"><span>состояло</span></td>
+                <td colspan="3">поступило</td>
+                <td colspan="3">выписано</td>
+                <td rowspan="3" class="rotated"><span>умерло</span></td>
+                <td colspan="5">состоит</td>
+                <td rowspan="3" class="rotated"><span>состоит матерей</span></td>
+                <td rowspan="3" class="rotated"><span>коек на обработке</span></td>
+                <td rowspan="3" class="rotated"><span>свободных коек</span></td>
+                <td colspan="4" class="bold">ИВЛ</td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="rotated"><span>приемный покой</span></td>
+                <td rowspan="2" class="rotated"><span>из других отделений</span></td>
+                <td rowspan="2" class="rotated bold">всего</td>
+                <td rowspan="2" class="rotated"><span>в другие стационары</span></td>
+                <td rowspan="2" class="rotated"><span>в стационар ЧОДКБ</span></td>
+                <td rowspan="2" class="bold">всего</td>
+                <td colspan="2">на ИВЛ</td>
+                <td colspan="2">без ИВЛ</td>
+                <td rowspan="2" class="bold">всего</td>
+                <td rowspan="2" class="rotated"><span>не рабочие</span></td>
+                <td rowspan="2" class="rotated"><span>ремонт</span></td>
+                <td rowspan="2" class="rotated"><span>занято</span></td>
+                <td rowspan="2"  class="bold">свободно</td>
+            </tr>
+            <tr>
+                <td class="rotated"><span>оперировано</span></td>
+                <td class="rotated"><span>не оперировано</span></td>
+                <td class="rotated"><span>оперировано</span></td>
+                <td class="rotated"><span>не оперировано</span></td>
+            </tr>
+            <tr class="total">
+                <td class="rotated bold"><span>Итого</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
         
-        <table></table>
         <div class="form2">
             <ul>
                 <li>
-                    <label>Койко-дней план: <input type="number" value = "0"></label>
+                    <label>Койко-дней план: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Койко-дней факт: <input type="number" value = "0"></label>
+                    <label>Койко-дней факт: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Средняя длительность пребывания план: <input type="number" value = "0"></label>
+                    <label>Средняя длительность пребывания план: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Средняя длительность пребывания факт: <input type="number" value = "0"></label>
+                    <label>Средняя длительность пребывания факт: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Оборот койки план: <input type="number" value = "0"></label>
+                    <label>Оборот койки план: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Оборот койки факт: <input type="number" value = "0"></label>
+                    <label>Оборот койки факт: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Функция койки план: <input type="number" value = "0"></label>
+                    <label>Функция койки план: <input type="number"></label>
                 </li>
                 <li>
-                    <label>Функция койки факт: <input type="number" value = "0"></label>
+                    <label>Функция койки факт: <input type="number"></label>
                 </li>
             </ul>
             <div class="buttons">
                 <button>Добавить</button>
                 <button>Удалить</button>
-
-                <button>Добавить</button>
             </div>
         </div>
-        <table border = "1">
+        
+        <table class="second-table" border = "1">
             <tr class="first-row">
                 <td class="period" rowspan="2">период</td>
                 <td colspan="3">Койко-день</td>
@@ -95,7 +224,7 @@
                 <td>% выполнения</td>
             </tr>
             <tr class="total">
-                <td><b>Итого</b></td>
+                <td class="rotated bold"><span>Итого</span></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -110,7 +239,7 @@
                 <td></td>
             </tr>
         </table>
-    </div>
+    </>
     <footer>
         Челябинск
         <br>
