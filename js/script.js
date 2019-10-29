@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
                                 newCells[i].textContent = 0;
                             } else {
                                 newCells[i].textContent = 
-                                        (newCells[i-1].textContent / newCells[i-2].textContent)*100;
+                                        ((newCells[i-1].textContent / newCells[i-2].textContent)*100).toFixed(1);
                             }
                             continue;
                         }
@@ -102,6 +102,15 @@ window.addEventListener('DOMContentLoaded', ()=> {
         for (let i = 1; i < lastRow.length; i++){
             for (let j = 2+n; j < table.rows.length-1; j++){
                 value += +(table.rows[j].cells[i].textContent);
+                /* if(table.classList.contains('second-table') && i % 3 === 0){
+                    value = value / (table.rows.length - 3);
+                } */
+            }
+            if(table.classList.contains('second-table') && (i % 3 === 0)){
+                value = (value / (table.rows.length - 3)).toFixed(1);
+                if ((table.rows.length - 3) === 0){
+                    value = 0;
+                }
             }
             lastRow[i].textContent = value;
             value=0;
