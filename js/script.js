@@ -102,9 +102,6 @@ window.addEventListener('DOMContentLoaded', ()=> {
         for (let i = 1; i < lastRow.length; i++){
             for (let j = 2+n; j < table.rows.length-1; j++){
                 value += +(table.rows[j].cells[i].textContent);
-                /* if(table.classList.contains('second-table') && i % 3 === 0){
-                    value = value / (table.rows.length - 3);
-                } */
             }
             if(table.classList.contains('second-table') && (i % 3 === 0)){
                 value = (value / (table.rows.length - 3)).toFixed(1);
