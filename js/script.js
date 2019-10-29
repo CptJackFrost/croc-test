@@ -71,10 +71,14 @@ window.addEventListener('DOMContentLoaded', ()=> {
                             continue;
                         }
 
-                        //в каждую третью - рассчет из того, что находится в двух предыдущих
                         else if (i % 3 === 0){
-                            newCells[i].textContent = 
-                                    (newCells[i-1].textContent / newCells[i-2].textContent)*100;
+                            //избегаем деления на ноль
+                            if (newCells[i-1].textContent <= 0) { 
+                                newCells[i].textContent = 0;
+                            } else {
+                                newCells[i].textContent = 
+                                        (newCells[i-1].textContent / newCells[i-2].textContent)*100;
+                            }
                             continue;
                         }
                         newCells[i].textContent = inputs[cursor].value;
