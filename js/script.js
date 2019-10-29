@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
 
                         else if (i % 3 === 0){
                             //избегаем деления на ноль
-                            if (newCells[i-1].textContent <= 0) { 
+                            if (newCells[i-2].textContent <= 0) { 
                                 newCells[i].textContent = 0;
                             } else {
                                 newCells[i].textContent = 
